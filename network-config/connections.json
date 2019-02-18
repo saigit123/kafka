@@ -1,0 +1,72 @@
+{
+    "name": "hlfv1",
+    "x-type": "hlfv1",
+    "x-commitTimeout": 300,
+    "version": "1.0.0",
+    "client": {
+        "organization": "Org1",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300",
+                    "eventHub": "300",
+                    "eventReg": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "mychannel": {
+            "orderers": [
+                "orderer0.example.com"
+            ],
+            "peers": {
+                "peer0.org1.example.com": {},
+                "peer1.org1.example.com": {}
+            }
+        }
+    },
+    "organizations": {
+        "Org1": {
+            "mspid": "Org1MSP",
+            "peers": [
+                "peer0.org1.example.com",
+                "peer1.org1.example.com"
+              
+
+            ],
+            "certificateAuthorities": [
+                "ca.org1.example.com"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer0.example.com": {
+            "url": "grpcs://localhost:7050",
+              "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----MIICNjCCAdygAwIBAgIRALrRl4QA9wiIlVfTwz3UXVgwCgYIKoZIzj0EAwIwbDELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBGcmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5leGFtcGxlLmNvbTAeFw0xOTAxMDQwNjA1MjVaFw0yOTAxMDEwNjA1MjVaMGwxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJbmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhhbXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQQrd62mJec6N/whLk1igYr/H34oJPQHVIR3mbVsJbRIn5WPp07WEMw5gpymPVNd+cWnjHvmq4ggYyx9NWWRLzHo18wXTAOBgNVHQ8BAf8EBAMCAaYwDwYDVR0lBAgwBgYEVR0lADAPBgNVHRMBAf8EBTADAQH/MCkGA1UdDgQiBCBWgIZrglviU+EkYoTi8sAKq0fXeiKmwsh3S9QxcOJ/UDAKBggqhkjOPQQDAgNIADBFAiEA1YDl6g6DcZoRVW8Eo1v8YJgGjHItat7F6YveLLneRwoCIH/fKNFam2DAxXBcJSeF0bg8uXVaA6CnJfCiIVAIQDkb-----END CERTIFICATE-----"
+            }
+        }
+    },
+    "peers": {
+        "peer0.org1.example.com": {
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----MIICSDCCAe+gAwIBAgIQGpeJDU4c+NfcIYKHtadxXjAKBggqhkjOPQQDAjB2MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEfMB0GA1UEAxMWdGxzY2Eub3JnMS5leGFtcGxlLmNvbTAeFw0xOTAxMDQwNjA1MjVaFw0yOTAxMDEwNjA1MjVaMHYxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcxLmV4YW1wbGUuY29tMR8wHQYDVQQDExZ0bHNjYS5vcmcxLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExXn7oScBF92RMIFgDF/stfIhpdsZPNCeQTiOh4s+GrDpzKdc81lZ2rklrRc+17kp/Dd/ETWr94xApw6wYyGXv6NfMF0wDgYDVR0PAQH/BAQDAgGmMA8GA1UdJQQIMAYGBFUdJQAwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgoOK9yT0+zDLd1w6KdaeHnrXfla5Gv/xhafq2NJLfmzcwCgYIKoZIzj0EAwIDRwAwRAIgDU5cnc9QqwgA8rprR4f0umX5nGF78MDIBpLSfVBQfcECIG5EiLBUDBsToch3vGlmsFTGM3AW9VvwdaYDIQDd3JmJ-----END CERTIFICATE-----"
+            }
+        },
+        "peer1.org1.example.com": {
+            "url": "grpcs://localhost:7053",
+             "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----MIICSDCCAe+gAwIBAgIQGpeJDU4c+NfcIYKHtadxXjAKBggqhkjOPQQDAjB2MQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEfMB0GA1UEAxMWdGxzY2Eub3JnMS5leGFtcGxlLmNvbTAeFw0xOTAxMDQwNjA1MjVaFw0yOTAxMDEwNjA1MjVaMHYxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBvcmcxLmV4YW1wbGUuY29tMR8wHQYDVQQDExZ0bHNjYS5vcmcxLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExXn7oScBF92RMIFgDF/stfIhpdsZPNCeQTiOh4s+GrDpzKdc81lZ2rklrRc+17kp/Dd/ETWr94xApw6wYyGXv6NfMF0wDgYDVR0PAQH/BAQDAgGmMA8GA1UdJQQIMAYGBFUdJQAwDwYDVR0TAQH/BAUwAwEB/zApBgNVHQ4EIgQgoOK9yT0+zDLd1w6KdaeHnrXfla5Gv/xhafq2NJLfmzcwCgYIKoZIzj0EAwIDRwAwRAIgDU5cnc9QqwgA8rprR4f0umX5nGF78MDIBpLSfVBQfcECIG5EiLBUDBsToch3vGlmsFTGM3AW9VvwdaYDIQDd3JmJ-----END CERTIFICATE-----"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "ca.org1.example.com": {
+            "url": "https://localhost:7054",
+            "caName": "ca.org1.example.com"
+        }
+    }
+}
